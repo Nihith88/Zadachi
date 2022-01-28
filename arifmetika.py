@@ -1,10 +1,8 @@
 """
 Принимаем строку от пользователя и сделаем с ней арифметическую операцию
 """
-
-spisok = list(input("Введите арифметическое выражение:  "))
-act_list = ['+', '-', '*', '/']
-# print(spisok)
+act_list = ['+', '-', '*', '/']  # Список операций арифметики
+spisok = list(input("Введите арифметическое выражение:  "))  # Запрос строки у пользователя
 
 border = (spisok.index(i) for i in spisok if i in act_list)
 actn = (i for i in spisok if i in act_list)
