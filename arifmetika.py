@@ -6,10 +6,8 @@ spisok = list(input("Введите арифметическое выражен�
 act_list = ['+', '-', '*', '/']
 # print(spisok)
 
-for i in spisok:
-    if i in act_list:
-        border = spisok.index(i)
-        actn = i
+border = (spisok.index(i) for i in spisok if i in act_list)
+actn = (i for i in spisok if i in act_list)
 
 st_num1 = ''.join(spisok[:border])
 st_num2 = ''.join(spisok[border + 1:])
