@@ -4,13 +4,12 @@
 
 spisok = list(input("Введите арифметическое выражение:  "))
 act_list = ['+', '-', '*', '/']
-# print(spisok)
 
-border = (spisok.index(i) for i in spisok if i in act_list)
-actn = (i for i in spisok if i in act_list)
-
-st_num1 = ''.join(spisok[:border])
-st_num2 = ''.join(spisok[border + 1:])
+for i in spisok:
+    if i in act_list:
+        st_num1 = ''.join(spisok[:spisok.index(i)])
+        st_num2 = ''.join(spisok[spisok.index(i) + 1:])
+        actn = i
 try:
     srez1 = (int(st_num1) if '.' not in st_num1 else float(st_num1))
     srez2 = (int(st_num2) if '.' not in st_num2 else float(st_num2))
