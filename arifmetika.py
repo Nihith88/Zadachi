@@ -1,13 +1,15 @@
 """
 Принимаем строку от пользователя и сделаем с ней арифметическую операцию
 """
-act_list = ['+', '-', '*', '/']  # Список операций арифметики
+
 spisok = list(input("Введите арифметическое выражение:  "))  # Запрос строки у пользователя
+act_list = ['+', '-', '*', '/']  # Список операций арифметики
 
-border = (spisok.index(i) for i in spisok if i in act_list)
+border = (lambda i: spisok.index(i) for i in spisok if i in act_list)
 actn = (i for i in spisok if i in act_list)
-
-st_num1 = ''.join(spisok[:border])
+print(border, type(border))
+print(actn, type(actn))
+"""st_num1 = ''.join(spisok[:border])
 st_num2 = ''.join(spisok[border + 1:])
 try:
     srez1 = (int(st_num1) if '.' not in st_num1 else float(st_num1))
@@ -24,4 +26,4 @@ try:
         except ZeroDivisionError:
             print('Деление на ноль')
 except ValueError:
-    print('ошибка ввода')
+    print('ошибка ввода')"""
